@@ -1,0 +1,325 @@
+/* ===========================
+   VARIABLES
+=========================== */
+
+:root{
+    --gold:#d69e3d;
+    --brown:#966f2c;
+    --black:#000;
+    --white:#fff;
+    --bg:#f3f0e9;
+}
+
+/* ===========================
+   GLOBAL
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Karla',sans-serif;
+    background:var(--bg);
+    color:var(--black);
+    line-height:1.6;
+}
+
+img{
+    display:block;
+    width:100%;
+    max-width:100%;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* ===========================
+   TYPOGRAPHY
+=========================== */
+
+h1,h2,h3{
+    font-family:'Lato',sans-serif;
+    font-weight:900;
+}
+
+h1{
+    font-size:2rem;
+}
+
+h2{
+    font-size:1.75rem;
+    margin-bottom:1rem;
+}
+
+h3{
+    font-size:1.4rem;
+    margin-bottom:.5rem;
+}
+
+.subtitle{
+    color:var(--gold);
+    text-transform:uppercase;
+    font-weight:bold;
+    margin-bottom:.5rem;
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.btn{
+    display:inline-block;
+    padding:15px 30px;
+    background:var(--gold);
+    color:var(--white);
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover,
+.btn:focus{
+    background:var(--brown);
+}
+
+/* ===========================
+   SKIP LINK
+=========================== */
+
+.skip-link{
+    position:absolute;
+    left:-9999px;
+}
+
+.skip-link:focus{
+    left:20px;
+    top:20px;
+    background:#fff;
+    padding:10px;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+header{
+    background:#000;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+}
+
+nav img{
+    width:180px;
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+}
+ 
+nav a{
+    color:#fff;
+    font-family:'Lato',sans-serif;
+    transition:.3s;
+}
+
+nav a:hover,
+nav a:focus{
+    color:var(--gold);
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+    position:relative;
+    height: 700px;
+    overflow:hidden;
+}
+
+.hero img{
+    width:100%;
+    height:750px;
+    object-fit:cover;
+}
+
+.hero-content{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    color:#fff;
+    background:rgba(0,0,0,.45);
+    animation:fadeIn 1.2s ease;
+}
+
+.hero p{
+    max-width:700px;
+    margin:20px 0;
+}
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+/* ===========================
+   WELCOME
+=========================== */
+
+.welcome{
+    padding:80px 0;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:15px;
+    margin-top:30px;
+}
+
+.large-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.gallery img{
+    border-radius:8px;
+}
+
+/* ===========================
+   WHY VISIT US
+=========================== */
+
+.features{
+    padding:80px 0;
+    text-align:center;
+    background:#fff;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:40px;
+    margin-top:40px;
+}
+
+.feature-card{
+    padding:20px;
+}
+
+.feature-card img{
+    width:90px;
+    margin:0 auto 20px;
+}
+
+.feature-card h3{
+    margin-bottom:15px;
+}
+
+/* ===========================
+   MENU
+=========================== */
+
+.menu{
+    background:url("../images/coffee-shop.jpeg") center/cover no-repeat;
+    position:relative;
+    padding:100px 0;
+    color:#fff;
+    text-align:center;
+}
+
+.menu::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.6);
+}
+
+.menu .container{
+    position:relative;
+    z-index:1;
+}
+
+/* ===========================
+   LOCATIONS
+=========================== */
+
+.locations{
+    background:url("../images/coffee-shop.jpeg") center/cover no-repeat;
+    position:relative;
+    padding:100px 0;
+    color:#fff;
+    text-align:center;
+}
+
+.locations::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.6);
+}
+
+.locations .container{
+    position:relative;
+    z-index:1;
+}
+
+/* ===========================
+   ABOUT
+=========================== */
+
+.about{
+    padding:80px 0;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.about-image img{
+    border-radius:10px;
+}
+
+.about-content p{
+    margin-bottom:20px;
+}
