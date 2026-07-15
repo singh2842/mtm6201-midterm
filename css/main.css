@@ -1,18 +1,19 @@
-/* ===========================
-   VARIABLES
-=========================== */
+/* =====================================
+   MY COFFEE HOUSE
+   MAIN CSS - PART 1
+===================================== */
+
+/* Variables */
 
 :root{
+    --white:#ffffff;
+    --black:#000000;
     --gold:#d69e3d;
     --brown:#966f2c;
-    --black:#000;
-    --white:#fff;
     --bg:#f3f0e9;
 }
 
-/* ===========================
-   GLOBAL
-=========================== */
+/* Global */
 
 *{
     margin:0;
@@ -26,9 +27,10 @@ html{
 
 body{
     font-family:'Karla',sans-serif;
-    background:var(--bg);
-    color:var(--black);
+    font-size:1rem;
     line-height:1.6;
+    color:var(--black);
+    background:var(--bg);
 }
 
 img{
@@ -48,20 +50,22 @@ ul{
 .container{
     width:90%;
     max-width:1200px;
-    margin:auto;
+    margin:0 auto;
 }
 
-/* ===========================
-   TYPOGRAPHY
-=========================== */
+/* Typography */
 
-h1,h2,h3{
+h1,
+h2,
+h3{
     font-family:'Lato',sans-serif;
     font-weight:900;
+    line-height:1.2;
 }
 
 h1{
     font-size:2rem;
+    margin-bottom:1rem;
 }
 
 h2{
@@ -70,77 +74,78 @@ h2{
 }
 
 h3{
-    font-size:1.4rem;
-    margin-bottom:.5rem;
+    font-size:1.375rem;
+    margin-bottom:1rem;
 }
 
 .subtitle{
     color:var(--gold);
     text-transform:uppercase;
-    font-weight:bold;
+    font-weight:700;
+    letter-spacing:2px;
     margin-bottom:.5rem;
 }
 
-/* ===========================
-   BUTTON
-=========================== */
-
-.btn{
-    display:inline-block;
-    padding:15px 30px;
-    background:var(--gold);
-    color:var(--white);
-    font-weight:bold;
-    transition:.3s;
-}
-
-.btn:hover,
-.btn:focus{
-    background:var(--brown);
-}
-
-/* ===========================
-   SKIP LINK
-=========================== */
+/* Skip Link */
 
 .skip-link{
     position:absolute;
     left:-9999px;
+    top:auto;
 }
 
 .skip-link:focus{
     left:20px;
     top:20px;
     background:#fff;
-    padding:10px;
+    color:#000;
+    padding:10px 20px;
+    z-index:1000;
 }
 
-/* ===========================
-   HEADER
-=========================== */
+/* Button */
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:16px 34px;
+    background:var(--gold);
+    color:var(--black);
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn:hover,
+.btn:focus{
+    background:var(--brown);
+    color:var(--white);
+}
+
+/* Header */
 
 header{
-    background:#000;
+    background:var(--black);
 }
 
 nav{
     display:flex;
-    justify-content:space-between;
+    flex-direction:column;
     align-items:center;
     padding:20px 0;
 }
 
 nav img{
-    width:180px;
+    width:170px;
+    margin-bottom:20px;
 }
 
 nav ul{
     display:flex;
     gap:25px;
 }
- 
+
 nav a{
-    color:#fff;
+    color:var(--white);
     font-family:'Lato',sans-serif;
     transition:.3s;
 }
@@ -150,19 +155,17 @@ nav a:focus{
     color:var(--gold);
 }
 
-/* ===========================
-   HERO
-=========================== */
+/* Hero */
 
 .hero{
     position:relative;
-    height: 700px;
+    height:700px;
     overflow:hidden;
 }
 
 .hero img{
     width:100%;
-    height:750px;
+    height:700px;
     object-fit:cover;
 }
 
@@ -175,57 +178,54 @@ nav a:focus{
     align-items:center;
     text-align:center;
     padding:20px;
-    color:#fff;
+    color:var(--white);
     background:rgba(0,0,0,.45);
-    animation:fadeIn 1.2s ease;
 }
 
-.hero p{
+.hero-content p{
     max-width:700px;
-    margin:20px 0;
 }
 
-@keyframes fadeIn{
-
-from{
-opacity:0;
-transform:translateY(40px);
+.hero h1{
+    max-width:800px;
 }
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
-}
-/* ===========================
+/* =====================================
    WELCOME
-=========================== */
+===================================== */
 
 .welcome{
     padding:80px 0;
+}
+
+.welcome h2{
+    margin-bottom:40px;
 }
 
 .gallery{
     display:grid;
     grid-template-columns:1fr;
     gap:15px;
-    margin-top:30px;
-}
-
-.large-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
 }
 
 .gallery img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
     border-radius:8px;
+    transition:transform .3s;
 }
 
-/* ===========================
-   WHY VISIT US
-=========================== */
+.gallery img:hover{
+    transform:scale(1.03);
+}
+
+.gallery-large img{
+    height:460px;
+}
+
+/* =====================================
+   FEATURES
+===================================== */
 
 .features{
     padding:80px 0;
@@ -245,7 +245,7 @@ transform:translateY(0);
 }
 
 .feature-card img{
-    width:90px;
+    width:80px;
     margin:0 auto 20px;
 }
 
@@ -253,57 +253,61 @@ transform:translateY(0);
     margin-bottom:15px;
 }
 
-/* ===========================
+.feature-card p{
+    max-width:320px;
+    margin:auto;
+}
+
+/* =====================================
    MENU
-=========================== */
+===================================== */
 
 .menu{
     background:url("../images/coffee-shop.jpeg") center/cover no-repeat;
     position:relative;
-    padding:100px 0;
-    color:#fff;
     text-align:center;
+    color:#fff;
+    padding:100px 20px;
 }
 
 .menu::before{
     content:"";
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,.6);
+    background:rgba(0,0,0,.55);
 }
 
 .menu .container{
     position:relative;
-    z-index:1;
+    z-index:2;
 }
 
-/* ===========================
+/* =====================================
    LOCATIONS
-=========================== */
+===================================== */
 
 .locations{
     background:url("../images/coffee-shop.jpeg") center/cover no-repeat;
     position:relative;
-    padding:100px 0;
-    color:#fff;
     text-align:center;
+    color:#fff;
+    padding:100px 20px;
 }
 
 .locations::before{
     content:"";
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,.6);
+    background:rgba(0,0,0,.55);
 }
 
 .locations .container{
     position:relative;
-    z-index:1;
+    z-index:2;
 }
-
-/* ===========================
+/* =====================================
    ABOUT
-=========================== */
+===================================== */
 
 .about{
     padding:80px 0;
@@ -317,9 +321,213 @@ transform:translateY(0);
 }
 
 .about-image img{
-    border-radius:10px;
+    border-radius:8px;
 }
 
 .about-content p{
     margin-bottom:20px;
+}
+
+/* =====================================
+   TESTIMONIALS
+===================================== */
+
+.testimonials{
+    background:#000;
+    color:#fff;
+    padding:80px 0;
+    text-align:center;
+}
+
+.testimonial-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:30px;
+    margin-top:40px;
+}
+
+.testimonial-card{
+    background:#111;
+    border-radius:8px;
+    overflow:hidden;
+    transition:transform .3s;
+}
+
+.testimonial-card:hover{
+    transform:translateY(-8px);
+}
+
+.testimonial-card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+}
+
+.testimonial-card blockquote{
+    padding:20px;
+    font-style:italic;
+}
+
+.testimonial-card h3{
+    color:var(--gold);
+    margin-bottom:5px;
+}
+
+.testimonial-card p{
+    padding-bottom:20px;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer{
+    background:#111;
+    color:#fff;
+    text-align:center;
+    padding:25px 0;
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (min-width:768px){
+
+nav{
+    flex-direction:row;
+    justify-content:space-between;
+}
+
+h1{
+    font-size:3rem;
+}
+
+h2{
+    font-size:2.375rem;
+}
+
+h3{
+    font-size:1.75rem;
+}
+
+.gallery{
+    grid-template-columns:2fr 1fr 1fr;
+}
+
+.gallery-large{
+    grid-row:span 2;
+}
+
+.gallery img{
+    height:220px;
+}
+
+.gallery-large img{
+    height:455px;
+}
+
+.feature-grid{
+    grid-template-columns:repeat(3,1fr);
+}
+
+.about-grid{
+    grid-template-columns:1fr 1fr;
+}
+
+.testimonial-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* =====================================
+   DESKTOP
+===================================== */
+
+@media (min-width:1200px){
+
+.container{
+    max-width:1200px;
+}
+
+h1{
+    font-size:3.875rem;
+}
+
+h2{
+    font-size:3rem;
+}
+
+h3{
+    font-size:2rem;
+}
+
+.hero{
+    height:850px;
+}
+
+.hero img{
+    height:850px;
+}
+
+.hero-content{
+    max-width:850px;
+    margin:auto;
+}
+
+.gallery img{
+    height:260px;
+}
+
+.gallery-large img{
+    height:535px;
+}
+
+.testimonial-grid{
+    grid-template-columns:repeat(3,1fr);
+}
+
+.btn{
+    padding:18px 36px;
+}
+
+}
+
+/* =====================================
+   ANIMATION
+===================================== */
+
+@keyframes fadeIn{
+
+from{
+    opacity:0;
+    transform:translateY(30px);
+}
+
+to{
+    opacity:1;
+    transform:translateY(0);
+}
+
+}
+
+.hero-content{
+    animation:fadeIn 1s ease;
+}
+
+/* =====================================
+   COMPLEX SELECTORS
+===================================== */
+
+nav ul li a:hover{
+    color:var(--gold);
+}
+
+.gallery > div img:hover{
+    transform:scale(1.05);
+}
+
+.testimonial-card:nth-child(2){
+    border:3px solid var(--gold);
 }
